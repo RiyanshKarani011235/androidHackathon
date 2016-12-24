@@ -26,7 +26,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return TabFrag1.newInstance(position + 1);
+        return MusicTabFragment.newInstance(null, null);
     }
 
     @Override

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="riyanshkarani011235.com.github.io.testapp.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/parent_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/background"
+                    android:src="@drawable/music_fragment_background"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:layout_height="78dp"
+                    android:elevation="10px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp">
+
+                <LinearLayout
+                    android:id="@+id/coldplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="150dp">
+
+                    <TextView
+                        android:paddingTop="4dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15dp"
+                        android:text="Coldplay "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:paddingTop="2dp"
+                        android:text="mystica"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/coldplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="40dp">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:textColor="@android:color/black"
+                        android:paddingTop="4dp"
+                        android:text="Daft Punk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:paddingTop="2dp"
+                        android:text="Rock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ListView
+                android:id="@+id/music_fragment_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="390dp">
+
+
+
+            </ListView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/play_button"
+            android:src="@drawable/play"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:paddingTop="30dp"
+            android:paddingLeft="30dp"
+            android:layout_alignTop="@+id/parent_linear_layout"/>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#333333"-->
+            <!--android:layout_alignBottom="@+id/play"-->
+            <!--android:layout_alignParentTop="true"/>-->
+        <!--<Button-->
+            <!--android:id="@+id/quit"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:text="abcd"-->
+            <!--android:textColor="@android:color/white"/>-->
+        <!--<Button-->
+            <!--android:id="@+id/play"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:text="efgh"-->
+            <!--android:textColor="@android:color/white"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/text_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_toStartOf="@+id/play"-->
+            <!--android:layout_toEndOf="@+id/quit"-->
+            <!--android:layout_alignBottom="@+id/quit"-->
+            <!--android:layout_alignTop="@+id/quit"-->
+            <!--android:text="ijkl"-->
+            <!--android:textColor="@android:color/white"/>-->
+
+    </RelativeLayout>
+
+</LinearLayout>
