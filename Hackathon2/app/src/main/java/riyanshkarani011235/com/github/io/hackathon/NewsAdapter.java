@@ -52,7 +52,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
             viewHolder.time = (TextView) newsView.findViewById(R.id.time);
             viewHolder.comments = (TextView) newsView.findViewById(R.id.comments);
             viewHolder.imageUrl = (TextView) newsView.findViewById(R.id.image_url);
-            viewHolder.image = (ImageView) newsView.findViewById(R.id.image);
+            viewHolder.image = (ImageView) newsView.findViewById(R.id.image_hero);
             newsView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) newsView.getTag();
@@ -76,7 +76,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 //            new DownloadImageTask(getContext(), viewHolder.image, news.getImgUrl());
 //        }
 //        return newsView;
-        viewHolder.image.setImageBitmap(GetImageFromUrl.getImageBitmap(news.getImgUrl()));
+//        viewHolder.image.setImageBitmap(GetImageFromUrl.getImageBitmap(news.getImgUrl()));
         return newsView;
     }
 
