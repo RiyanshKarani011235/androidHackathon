@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textColor="@drawable/tab_item_selector"/>
+        android:textColor="@drawable/tab_item_selector"
+        android:textStyle="bold"/>
 
     <!-- Tab divider -->
     <View
