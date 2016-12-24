@@ -32,6 +32,11 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-        return tabTitles[position];
+        if(position==0)
+            return context.getResources().getString(R.string.music_string);
+        else
+            return context.getResources().getString(R.string.news_string);
+
+
     }
 }
