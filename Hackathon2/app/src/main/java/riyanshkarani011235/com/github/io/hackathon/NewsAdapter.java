@@ -26,10 +26,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView city;
         TextView time;
         TextView comments;
-        TextView imageUrl;
-        TextView pimgUrl;
         ImageView image;
+        ImageView profileImage;
     }
+
+
 
     ViewHolder viewHolder;
 
@@ -51,8 +52,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
             viewHolder.city = (TextView) newsView.findViewById(R.id.city);
             viewHolder.time = (TextView) newsView.findViewById(R.id.time);
             viewHolder.comments = (TextView) newsView.findViewById(R.id.comments);
-            viewHolder.imageUrl = (TextView) newsView.findViewById(R.id.image_url);
             viewHolder.image = (ImageView) newsView.findViewById(R.id.image_hero);
+            viewHolder.profileImage = (ImageView) newsView.findViewById(R.id.profile_image);
             newsView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) newsView.getTag();
@@ -64,20 +65,30 @@ public class NewsAdapter extends ArrayAdapter<News> {
         viewHolder.city.setText(news.getCity());
         viewHolder.time.setText(news.getTime());
         viewHolder.comments.setText(news.getComments());
-        viewHolder.imageUrl.setText(news.getImgUrl());
 
-//        Drawable drawable = viewHolder.image.getDrawable();
-//        boolean hasImage = (drawable != null);
-//
-//        if (hasImage && (drawable instanceof BitmapDrawable)) {
-//            hasImage = ((BitmapDrawable)drawable).getBitmap() != null;
-//        }
-//        if(!hasImage) {
-//            new DownloadImageTask(getContext(), viewHolder.image, news.getImgUrl());
-//        }
-//        return newsView;
-//        viewHolder.image.setImageBitmap(GetImageFromUrl.getImageBitmap(news.getImgUrl()));
+
+        Drawable drawable = viewHolder.image.getDrawable();
+        boolean hasImage = (drawable != null);
+
+        if (hasImage && (drawable instanceof BitmapDrawable)) {
+            hasImage = ((BitmapDrawable)drawable).getBitmap() != null;
+        }
+        if(hasImage) {
+            new DownloadImageTask(news.getImgUrl(), viewHolder.image).execute();
+        }
+
+        drawable = viewHolder.profileImage.getDrawable();
+        hasImage = (drawable != null);
+
+        if (hasImage && (drawable instanceof BitmapDrawable)) {
+            hasImage = ((BitmapDrawable)drawable).getBitmap() != null;
+        }
+        if(hasImage) {
+            new DownloadImageTask(news.getPImgUrl(), viewHolder.profileImage).execute();
+        }
+
         return newsView;
+
     }
 
 }
