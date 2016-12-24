@@ -26,7 +26,12 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return MusicTabFragment.newInstance(null, null);
+        if(position == 0) {
+            return MusicTabFragment.newInstance(null, null);
+        } else if(position == 1) {
+            return NewsTabFragment.newInstance(null, null);
+        }
+        return null;
     }
 
     @Override

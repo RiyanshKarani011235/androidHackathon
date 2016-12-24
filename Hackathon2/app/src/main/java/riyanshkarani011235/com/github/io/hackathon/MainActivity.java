@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,8 +22,11 @@ import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, MusicTabFragment.MusicTabFragmentOnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, MusicTabFragment.MusicTabFragmentOnFragmentInteractionListener, NewsTabFragment.NewsTabFragmentOnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +88,11 @@ public class MainActivity extends AppCompatActivity
         spec.setContent(R.id.tab2);
         spec.setIndicator(newsString);
         host.addTab(spec);*/
+
+        ArrayList<News> newsArray = new JSONStringParser().createNewsArray();
+        for(int i=0; i<newsArray.size(); i++) {
+            Log.i("news element " + i, newsArray.get(i).toString());
+        }
 
     }
 

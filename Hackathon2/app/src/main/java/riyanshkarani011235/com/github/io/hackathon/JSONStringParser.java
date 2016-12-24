@@ -1,6 +1,11 @@
 package riyanshkarani011235.com.github.io.hackathon;
 
+import android.util.Log;
+
 import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * Created by ironstein on 24/12/16.
@@ -48,8 +53,46 @@ public class JSONStringParser {
                     "    }\n" +
                     "]";
 
+    JSONArray array = null;
+
 
     /*public JSONStringParser() {
         JSONArray array = Js
     }*/
+    public JSONStringParser() {
+        try {
+            array = new JSONArray(jsonString);
+            Log.i("JSON object", array.toString());
+        } catch (org.json.JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<News> createNewsArray() {
+        if(array == null) {
+            return null;
+        }
+        try {
+            ArrayList<News> newsArray = new ArrayList<>();
+            for(int i=0; i<array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                News news = new News(
+                        object.getString("description"),
+                        object.getString("name"),
+                        object.getString("city"),
+                        object.getString("time"),
+                        object.getString("comments"),
+                        object.getString("img"),
+                        object.getString("pimg")
+                );
+                newsArray.add(news);
+            }
+            return newsArray;
+
+        } catch (org.json.JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
