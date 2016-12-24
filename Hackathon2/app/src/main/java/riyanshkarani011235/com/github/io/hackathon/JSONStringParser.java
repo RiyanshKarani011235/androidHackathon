@@ -49,7 +49,7 @@ public class JSONStringParser {
                     "]";
 
 
-    public JSONStringParser() {
+    /*public JSONStringParser() {
         JSONArray array = Js
-    }
+    }*/
 }

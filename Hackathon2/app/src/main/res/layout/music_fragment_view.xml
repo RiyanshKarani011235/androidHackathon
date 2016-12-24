@@ -1,121 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rootRelative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/parent_linear_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:elevation="20dp">
-
-        <RelativeLayout
-            android:id="@+id/top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/background"
-                android:src="@drawable/music_fragment_background"
-                android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_height="78dp"
-                android:elevation="10px"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/parent_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="52dp">
+            android:layout_height="wrap_content"
+            app:cardElevation="80dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/coldplay"
+            <RelativeLayout
+                android:id="@+id/top"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="150dp">
+                android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/background"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/music_fragment_background" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_alignBottom="@id/background"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
                 <TextView
-                    android:paddingTop="4dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="15dp"
-                    android:text="Coldplay "
+                    android:id="@+id/google_title_new"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:paddingTop="2dp"
-                    android:text="mystica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_toRightOf="@+id/coldplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="40dp">
-
-                <TextView
+                    android:text="Google Music"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:textColor="@android:color/black"
-                    android:paddingTop="4dp"
-                    android:text="Daft Punk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@android:color/white"
+                    />
 
                 <TextView
-                    android:paddingTop="2dp"
-                    android:text="Rock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Playlist, Stations. Artists, Albums. Songs"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:ellipsize="end"
+                    android:maxLines="1"/>
+</LinearLayout>
+            </RelativeLayout>
 
-            </LinearLayout>
 
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_below="@+id/parent_linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ListView
-                android:id="@+id/music_fragment_list_view"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="390dp">
-            </ListView>
+                android:layout_height="52dp">
+
+                <LinearLayout
+                    android:id="@+id/coldplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="150dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:text="Coldplay "
+                        android:textColor="@android:color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:text="mystica" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/coldplay"
+                    android:orientation="vertical"
+                    android:paddingLeft="40dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:text="Daft Punk"
+                        android:textColor="@android:color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:text="Rock" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parent_linear_layout">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="0sp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_category"
+                        android:textColor="@android:color/black"
+                        android:textSize="17dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorGrey"
+                        android:padding="10dp"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner2"
+                        android:layout_margin="15dp"
+                        android:entries="@array/category_array"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="0sp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Search Music"
+                        android:textColor="@android:color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorGrey"
+                        android:padding="10dp"/>
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="5dp"
+          >
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="10dp"
+              android:hint="Track Name"
+              android:background="@android:color/transparent"/>
+          <ImageView
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:layout_marginRight="10dp"
+              android:layout_alignParentTop="true"
+              android:layout_alignParentRight="true"
+              android:scaleType="fitCenter"
+              android:src="@drawable/search"/>
+      </RelativeLayout>
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
-    <ImageView
-        android:id="@+id/play_button"
-        android:src="@drawable/play"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:paddingTop="30dp"
-        android:paddingLeft="30dp"
-        android:layout_alignTop="@+id/parent_linear_layout"
-        android:elevation="20dp"/>
-
     </RelativeLayout>
-
-</LinearLayout>
+<ImageView
+    android:layout_width="70dp"
+    android:layout_height="85dp"
+    app:layout_anchor="@id/top"
+    android:scaleType="fitXY"
+    android:paddingBottom="15dp"
+    android:layout_marginBottom="@dimen/fab_margin"
+    android:layout_marginLeft="@dimen/fab_margin"
+    android:layout_marginRight="@dimen/fab_margin"
+    android:src="@drawable/play"
+    app:layout_anchorGravity="bottom|start"/>
+</android.support.design.widget.CoordinatorLayout>

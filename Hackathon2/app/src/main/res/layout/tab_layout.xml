@@ -15,5 +15,5 @@
         android:layout_height="25dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:background="#55000000" />
+        android:background="@color/colorGrey" />
 </RelativeLayout>
